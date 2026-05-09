@@ -107,21 +107,3 @@ function toggleActive(id) {
 ```
 
 This function updates the active status of a student by their ID, demonstrating immutable state updates in React.
-
-## Learning Outcomes
-
-Through this project, I learned:
-- How to structure a React application with multiple components
-- How to pass data between components using props
-- How to manage and update state using React hooks
-- How to render lists dynamically with the map function
-- How to implement conditional rendering
-- How to handle user interactions and events
-
-## Author
-
-Tiisu Sharif
-
-## License
-
-This project is licensed under the MIT License.
