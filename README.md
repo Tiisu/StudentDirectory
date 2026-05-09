@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# Student Profile Directory
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based web application that displays student profiles with interactive features. This project demonstrates core React concepts including components, props, state management, and conditional rendering.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+This application displays a directory of student profiles, allowing users to view student information and toggle their active/inactive status. Each student card shows their name, track, bio, skill level, and current status.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Display multiple student profile cards
+- View student information (name, track, bio, skill level)
+- Toggle student status between Active and Inactive
+- Responsive design with clean UI
+- Dynamic rendering using React
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## React Concepts Demonstrated
 
-### `npm test`
+This project showcases the following React fundamentals:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Components** - Modular component structure (Header, ProfileList, ProfileCard, Footer)
+2. **Props** - Passing data and functions from parent to child components
+3. **State Management** - Using `useState` hook to manage student data
+4. **Conditional Rendering** - Displaying different UI based on student status
+5. **Array Mapping** - Using `.map()` to render multiple components dynamically
+6. **Event Handling** - Button click events to update state
 
-### `npm run build`
+## Component Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+App
+├── Header (displays title)
+├── ProfileList (maps through students array)
+│   └── ProfileCard (individual student cards)
+└── Footer (shows total student count)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Student Data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The application includes 6 student profiles with the following information:
+- Name
+- Track (area of study)
+- Bio (short description)
+- Skill Level (Beginner, Intermediate, Advanced)
+- Status (Active/Inactive)
 
-### `npm run eject`
+## Installation and Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
+```bash
+git clone https://github.com/Tiisu/StudentDirectory.git
+cd StudentDirectory
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Install dependencies:
+```bash
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Run the application:
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Learn More
+## Technologies Used
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- React
+- JavaScript (ES6+)
+- CSS3
+- HTML5
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Color Scheme
 
-### Code Splitting
+- Primary Color: Yellow (#F4D03F)
+- Background: White
+- Text: Dark gray and black tones
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+src/
+├── components/
+│   ├── Header.js
+│   ├── ProfileList.js
+│   ├── ProfileCard.js
+│   └── Footer.js
+├── App.js
+├── App.css
+└── index.js
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Key Functions
 
-### Making a Progressive Web App
+### toggleActive Function
+```javascript
+function toggleActive(id) {
+  setStudents((prevStudents) =>
+    prevStudents.map((student) =>
+      student.id === id
+        ? { ...student, isActive: !student.isActive }
+        : student
+    )
+  );
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This function updates the active status of a student by their ID, demonstrating immutable state updates in React.
 
-### Advanced Configuration
+## Learning Outcomes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Through this project, I learned:
+- How to structure a React application with multiple components
+- How to pass data between components using props
+- How to manage and update state using React hooks
+- How to render lists dynamically with the map function
+- How to implement conditional rendering
+- How to handle user interactions and events
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Tiisu Sharif
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
